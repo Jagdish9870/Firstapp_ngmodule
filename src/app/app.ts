@@ -8,4 +8,13 @@ import { Component, signal } from '@angular/core';
 })
 export class App {
   protected readonly title = signal('Firstapp_ngmodule');
+    property_binding=" designer is jack"
+
+  ngOnInit(){
+   // this.changeProperty();
+  }
+
+  changeProperty(){
+    this.property_binding=" creater is jack"
+  }
 }
