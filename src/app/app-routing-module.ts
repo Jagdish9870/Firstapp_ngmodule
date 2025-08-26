@@ -4,6 +4,7 @@ import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Courses } from './pages/courses/courses';
 import { Admin } from './pages/admin/admin';
+import { Contact } from './pages/contact/contact';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
    {path:'about', component:About},
    {path:'course', component:Courses},
    {path:'admin', component:Admin},
+   {path:'contact', component:Contact},
 
   //  {
   //   path:'',
