@@ -1,13 +1,14 @@
 import { Directive, ElementRef, HostListener, input } from '@angular/core';
 
 @Directive({
-  selector: '[appHoverColor]',
+  selector: '[HoverColor]',
   standalone: false
 })
 export class HoverColor {
 // @Input() defaultColor: string = 'black'; // Default text color
   // @Input() hoverColor: string = 'orange';    // Color on hover
 
+  
   defaultColor = input<string>('black');
   hoverColor = input<string>('orange');
 
