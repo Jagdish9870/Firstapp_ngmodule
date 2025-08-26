@@ -1,5 +1,5 @@
 <div class="row mt-3"> 
-  @for (course of courses(); track $index) {
+  @for (course of courseService.coursesSignal(); track $index) {
     <div class="col-lg-4 mb-4">
 <div class="box" align="center">
     <div class="course-img" align="center">

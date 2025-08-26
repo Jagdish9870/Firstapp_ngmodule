@@ -1,8 +1,8 @@
-import { Component, effect, inject, input, Input, SecurityContext, signal } from '@angular/core';
+import { Component, computed, effect, inject, input, Input, SecurityContext, signal } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Course } from '../../interfaces/course.interface';
 import { CourseService } from '../../services/course/course.service';
 // import { DomSanitizer } from '@angular/platform-browser';
+import { Course } from '../../../../../First_app/src/app/interfaces/course';
 
 @Component({
   selector: 'app-courses',
@@ -13,26 +13,27 @@ import { CourseService } from '../../services/course/course.service';
 export class Courses {
 
   constructor(){
-    effect(()=> {
-      const courses=this.courseService.coursesSignal();
+//     effect(()=> {
+//       const courses=this.courseService.coursesSignal();
 
-      if(courses !== this.courses()){
- this.courses.set(courses);
-      }
+//       if(courses !== this.courses()){
+//  this.courses.set(courses);
+//       }
      
       
-    },{allowSignalWrites: true})
+//     },{allowSignalWrites: true})
   }
   //  isAdmin=input(false,{
   //   // alias: 'isAdm'
   //  });
    isAdmin=input<boolean>(false);
   // courses: Course[]=[];
-  courses= signal<Course[]>([]);
+  // courses= signal<Course[]>([]);
 
   // coursesSub!: Subscription;
    
- private courseService=inject(CourseService);
+ courseService=inject(CourseService);
+//  courses=computed(()=> this.courseService.coursesSignal());
 //  private sanitizer =inject(DomSanitizer);
 //  sanitizerUrl(value: string){
 //   return this.sanitizer.sanitize(SecurityContext.URL, value) || null
