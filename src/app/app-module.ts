@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Header } from './main-app/header/header';
 import { Footer } from './main-app/footer/footer';
+import { provideHttpClient } from '@angular/common/http';
 
 
 
@@ -20,7 +21,8 @@ import { Footer } from './main-app/footer/footer';
     AppRoutingModule,
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideBrowserGlobalErrorListeners(),
+     provideHttpClient()
   ],
   bootstrap: [App]
 })
