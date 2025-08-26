@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { CourseService } from '../../services/course/course.service';
 import { Course } from '../../interfaces/course.interface';
 import { NgForm } from '@angular/forms';
@@ -10,18 +10,29 @@ import { NgForm } from '@angular/forms';
   styleUrl: './admin.scss'
 })
 export class Admin {
+  constructor(){
+    // effect(()=>{
 
-  model :any={ };
-  cover !: string | null ;
-  cover_file : any;
-  showError=false;
-  courses: any[]=[];
+    // })
+  }
+
+  // model :any={ };
+  // cover !: string | null ;
+  // cover_file : any;
+  // showError=false;
+model =signal<any>({});
+  cover =signal<string | null>(null) ;
+  cover_file =signal <any>(null);
+
+  showError=signal<boolean>(false);
+
+  // courses: any[]=[];
   private courseService=inject(CourseService);
   onSubmit(form: NgForm){
     if(form.invalid || !this.cover){
       form.control.markAllAsTouched();
       if(!this.cover){
-        this.showError=true;
+        this.showError.set(true);
       }
       return;
     }
@@ -31,8 +42,8 @@ export class Admin {
   }
   clearForm(form:NgForm){
      form.reset();
-    this.cover=null;
-    this.cover_file=null;
+    this.cover.set(null);
+    this.cover_file.set(null);
   }
   onFileSelected(event: any){
     const file=event.target.files[0];
@@ -42,11 +53,11 @@ export class Admin {
     console.log(reader);
     reader.onload=()=>{
       const dataUrl= reader.result!.toString();
-      this.cover =dataUrl;
+      this.cover.set(dataUrl);
       console.log('image : ',this.cover);
     };
     reader.readAsDataURL(file);
-    this.showError=false;
+    this.showError.set(false);
 
     }
     
@@ -58,7 +69,7 @@ export class Admin {
       const formValue=form.value;
     const data : Course={
       ...formValue,
-      image: this.cover,
+      image: this.cover(),
       // id: this.courses.length + 1,
     };
     await this.courseService.addCourse(data);

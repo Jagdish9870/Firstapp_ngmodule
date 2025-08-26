@@ -9,7 +9,7 @@
         <input type="text" class="form-control" placeholder="enter title" id="title"
           name="title"
           #title="ngModel"
-          [(ngModel)]="model.title"
+          [(ngModel)]="model().title"
           required />
           @if (title.invalid && title.touched) {
             <div class="text-danger">
@@ -27,7 +27,7 @@
           id="description"
           name="description"
           #description="ngModel"
-          [(ngModel)]="model.description"
+          [(ngModel)]="model().description"
           required
         >
         
@@ -42,12 +42,12 @@
       <div>
         <label for="image">Choose an image : </label>
         <input type="file" id="image" name="image" accept="image/*" [multiple]="false" (change)="onFileSelected($event)" ngModel required >
-    @if(cover){
+    @if(cover()){
         <div class="imageDiv" align="right">
-            <img [src]="cover" alt="">
+            <img [src]="cover()" alt="">
         </div>
     }  
-    @if(showError){
+    @if(showError()){
         <div class="text-danger">
             image is required
           </div>
