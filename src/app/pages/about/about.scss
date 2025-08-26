@@ -1,0 +1,28 @@
+.about-us-section {
+  background: #e6fdfa;
+  .team-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 0.75rem;
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+  h2 {
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 0.35em;
+  }
+  p {
+    color: #414a4c;
+    font-size: 1rem;
+    margin-bottom: 1.2em;
+  }
+  .fw-bold {
+    font-size: 1.1rem;
+  }
+}
