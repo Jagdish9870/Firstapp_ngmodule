@@ -2,10 +2,8 @@ import { NgModule, Component } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
-import { Course } from '../../../First_app/src/app/interfaces/course';
 import { Courses } from './pages/courses/courses';
 import { Admin } from './pages/admin/admin';
-import { HomeModule } from './pages/home/home-module';
 
 
 const routes: Routes = [
