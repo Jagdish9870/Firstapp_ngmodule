@@ -1,0 +1,21 @@
+img{
+    width: 90%;
+    height: 80vh;
+    object-position: center;
+    object-fit: cover;
+
+} 
+.main-content{
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    h1{
+        color: darkgrey;
+        font-size: 2.5rem;
+    }
+}
+.courses{
+    background-color: aliceblue;
+    padding: 6vh ;
+}
