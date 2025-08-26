@@ -25,6 +25,7 @@ model =signal<any>({});
   cover_file =signal <any>(null);
 
   showError=signal<boolean>(false);
+  isSaved=signal<boolean>(false);
 
   // courses: any[]=[];
   private courseService=inject(CourseService);
@@ -75,10 +76,14 @@ model =signal<any>({});
     await this.courseService.addCourse(data);
     // this.courses=[...this.courses,data];
     // this.setItem(this.courses);
+    this.isSaved.set(true);
+    setTimeout(()=>{
+      this.isSaved.set(false);
+     },2000);
     this.clearForm(form);
       
     } catch (error) {
-      console.log(error);
+      console.log(error)
       
     }
     

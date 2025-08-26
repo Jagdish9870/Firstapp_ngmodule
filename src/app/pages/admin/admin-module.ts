@@ -5,6 +5,7 @@ import { AdminRoutingModule } from './admin-routing-module';
 import { FormsModule } from '@angular/forms';
 import { CourseModule } from '../courses/course-module';
 import { Admin } from './admin';
+import { DirectivesModule } from '../../directives/directives-module';
 
 
 
@@ -14,7 +15,8 @@ import { Admin } from './admin';
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    CourseModule
+    CourseModule,
+    DirectivesModule
   ]
 })
 export class AdminModule { }

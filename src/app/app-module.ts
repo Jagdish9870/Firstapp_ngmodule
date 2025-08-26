@@ -6,6 +6,7 @@ import { App } from './app';
 import { Header } from './main-app/header/header';
 import { Footer } from './main-app/footer/footer';
 import { provideHttpClient } from '@angular/common/http';
+import { HoverColor } from './directives/hoverColor/hover-color';
 
 
 
@@ -15,6 +16,7 @@ import { provideHttpClient } from '@angular/common/http';
     App,
     Header,
     Footer
+    
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 <div class="card">
-  <div class="card-header">{{'Add course' |uppercase}}</div>
+  <span appHoverColor [hoverColor]="'red'">
+      {{ "Add Course" | uppercase }}
+    </span>
   <div class="card-body">
     <form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
       <div class="mb-3">
@@ -55,7 +57,14 @@
     }
     </div> 
       <div class="m-3" align="center">
-        <button type="submit" class="btn btn-primary">save</button>
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg"
+          [ngClass]="{ 'btn-success': isSaved() }"
+          [ngStyle]="{ 'color': isSaved() ? 'black' : '' }"
+        >
+          {{ isSaved() ? 'Saved' : 'Save' }}
+        </button>
       </div>
     </form>
   </div>
