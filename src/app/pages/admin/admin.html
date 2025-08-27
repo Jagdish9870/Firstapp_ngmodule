@@ -1,7 +1,9 @@
 <div class="card">
-  <span appHoverColor  [hoverColor]="'red'">
+  <div class="card-header">
+    <span HoverColor [hoverColor]="'red'">
       {{ "Add Course" | uppercase }}
     </span>
+  </div>
   <div class="card-body">
     <form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
       <div class="mb-3">
